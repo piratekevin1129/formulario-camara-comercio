@@ -102,4 +102,182 @@ var puntos = [{
     x:67,
     y:50,
     w:1.5
+},{
+    t:'obligatorio-si',
+    x:29,
+    y:57.5,
+    w:2
+},{
+    t:'opcional',
+    x:60,
+    y:57.5,
+    w:2
+},{
+    t:'opcional',
+    x:17,
+    y:59.3,
+    w:2
+},{
+    t:'obligatorio-si',
+    x:20.5,
+    y:61.2,
+    w:2
+},{
+    t:'obligatorio-si',
+    x:47,
+    y:61.2,
+    w:2
+},{
+    t:'opcional',
+    x:75,
+    y:61.2,
+    w:2
+},{
+    t:'obligatorio-si',
+    x:88,
+    y:61.2,
+    w:2
+},{
+    t:'obligatorio-si',
+    x:13,
+    y:64.9,
+    w:7,
+    h:'1/3'
+},{
+    t:'opcional',
+    x:45.5,
+    y:63,
+    w:2
+},{
+    t:'opcional',
+    x:75,
+    y:63,
+    w:2
+},{
+    t:'obligatorio-si',
+    x:29,
+    y:67,
+    w:2,
+    m:'Debe tener estructura de correo electrónico'
+},{
+    t:'obligatorio-si',
+    x:31,
+    y:70.5,
+    w:2
+},{
+    t:'opcional',
+    x:63,
+    y:70.5,
+    w:2,
+},{
+    t:'opcional',
+    x:89.3,
+    y:70.5,
+    w:2,
+},{
+    t:'obligatorio-si',
+    x:20.5,
+    y:72.3,
+    w:2
+},{
+    t:'obligatorio-si',
+    x:46.5,
+    y:72.3,
+    w:2
+},{
+    t:'opcional',
+    x:75.5,
+    y:72.3,
+    w:2
+},{
+    t:'obligatorio-si',
+    x:88,
+    y:72.3,
+    w:2
+},{
+    t:'obligatorio-si',
+    x:13,
+    y:75,
+    w:7,
+    h:'1/3'
+},{
+    t:'opcional',
+    x:54,
+    y:74,
+    w:1.5
+},{
+    t:'opcional',
+    x:83,
+    y:74,
+    w:1.5
+},{
+    t:'obligatorio-si',
+    x:28,
+    y:76.7,
+    w:2,
+    m:'Debe tener estructura de correo electrónico'
+},{
+    t:'opcional',
+    x:25,
+    y:78,
+    w:2
+},{
+    t:'obligatorio-si',
+    x:81,
+    y:79.5,
+    w:2
+},{
+    t:'obligatorio-si',
+    x:25,
+    y:85.5,
+    w:2
+},{
+    t:'opcional',
+    x:46,
+    y:85.5,
+    w:2
+},{
+    t:'opcional',
+    x:65,
+    y:86.7,
+    w:2
+},{
+    t:'opcional',
+    x:86,
+    y:86.7,
+    w:2
+},{
+    t:'opcional',
+    x:59.2,
+    y:89.3,
+    w:2
+},{
+    t:'opcional',
+    x:73.2,
+    y:89.3,
+    w:2
+},{
+    t:'opcional',
+    x:89.4,
+    y:89.3,
+    w:2
+},{
+    t:'obligatorio-si',
+    x:10,
+    y:92.5,
+    w:10,
+    h:'1/5',
+    m:'Debe tener estructura de correo electrónico'
+},{
+    t:'obligatorio-si',
+    x:63,
+    y:94.5,
+    w:2,
+    m:'Deberá coincidir con unos de los diligenciados en la casilla anterior'
+},{
+    t:'obligatorio-si',
+    x:72.2,
+    y:94.4,
+    w:10,
+    h:'1/4'
 }]

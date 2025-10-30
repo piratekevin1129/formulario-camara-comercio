@@ -15,8 +15,8 @@
         <div id="formulario-wrapper">
             <div id="formulario-wrap">
                 <img id="formulario-img" src="assets/images/formulario.png" />
-                <div id="formulario-opcional" class="formulario-on"></div>
-                <div id="formulario-obligatorio-si-causal" class="formulario-on"></div>
+                <div id="formulario-opcional" class="formulario-off"></div>
+                <div id="formulario-obligatorio-si-causal" class="formulario-off"></div>
                 <div id="formulario-obligatorio-no-causal" class="formulario-on"></div>
             </div>
         </div>
@@ -24,19 +24,19 @@
             <p id="tooltip-txt"></p>
         </div>
         <div id="formulario-checks">
-            <div class="formulario-check formulario-checked">
+            <div class="formulario-check" onclick="clickCheck(this,1)">
                 <div class="formulario-check-input">
                     <img src="assets/images/icon_check-op.svg" />
                 </div>
                 <p>Opcional</p>
             </div>
-            <div class="formulario-check">
+            <div class="formulario-check" onclick="clickCheck(this,2)">
                 <div class="formulario-check-input">
                     <img src="assets/images/icon_check-si.svg" />
                 </div>
                 <p>Obligatorio y es causal de devolución su omisión</p>
             </div>
-            <div class="formulario-check">
+            <div class="formulario-check formulario-checked" onclick="clickCheck(this,3)">
                 <div class="formulario-check-input">
                     <img src="assets/images/icon_check-no.svg" />
                 </div>

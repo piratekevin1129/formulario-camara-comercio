@@ -35,9 +35,11 @@ html,body{
     position: relative;
     width: 100%;
     height: auto;
-    margin: 0px;
+    margin: 0px auto;
     padding: 0px;
     box-sizing: border-box;
+
+    transition: width 0.15s;
 
 }
 #formulario-img{
@@ -65,27 +67,36 @@ html,body{
     align-items: center;
     justify-content: center;
     font-size: 24px;
-    color: #fff;
+    color: #000;
     font-weight: bold;
 }
 
-.formulario-punto-opcional{
+.formulario-punto-opcional::after,
+.formulario-punto-obligatorio-si::after,
+.formulario-punto-obligatorio-no::after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    border-radius: 2px;
+}
+
+.formulario-punto-opcional::after{
     background-color: rgba(178,234,42, 0.6);
-    border-radius: 2px;
 }
-.formulario-punto-obligatorio-si{
+.formulario-punto-obligatorio-si::after{
     background-color: rgba(237,28,36, 0.6);
-    border-radius: 2px;
 }
-.formulario-punto-obligatorio-no{
+.formulario-punto-obligatorio-no::after{
     background-color: rgba(124,56,148, 0.6);
-    border-radius: 2px;
 }
 
 .signo{
     position: absolute;
     cursor: pointer;
-    z-index: 10;
+    z-index: 9;
 }
 .signo-right{
     width: auto;
@@ -102,6 +113,29 @@ html,body{
     margin: 0px;
 }
 
+.formulario-off{
+    visibility: hidden;
+}
+.formulario-on{
+    visibility: visible;
+}
+
+.formulario-on .formulario-punto-opcional::after,
+.formulario-on .formulario-punto-obligatorio-si::after,
+.formulario-on .formulario-punto-obligatorio-no::after{
+    animation: animacion-parpadeo 1s infinite linear forwards;
+}
+@keyframes animacion-parpadeo{
+    0%,100%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+}
+
+/****************/
+
 #tooltip{
     position: absolute;
     width: 350px;
@@ -111,6 +145,7 @@ html,body{
     border-radius: 12px;
     background-color: #ffffff;
     box-shadow: 4px 4px 10px 4px rgba(0,0,0,0.3);
+    z-index: 10;
 }
 #tooltip p{
     display: block;
@@ -141,69 +176,7 @@ html,body{
     transition: opacity 0.25s, transform 0.25s, visibility 0s;
 }
 
-.formulario-off{
-
-}
-.formulario-on{
-
-}
-
-#formulario-buttons{
-    position: absolute;
-    width: 45px;
-    height: 100px;
-    left: 20px;
-    bottom: 0px;
-    bottom: calc(0px + 70px + 20px);
-}
-
-.formulario-zoom-btn{
-    outline: none;
-    outline-width: 0;
-    display: block;
-    width: 45px;
-    height: 45px;
-    box-sizing: border-box;
-    position: relative;
-    border-radius: 50%;
-    border: none;
-    background-color: #d61921;
-
-    box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
-
-    transition: box-shadow 0.2s, background-color 0.2s;
-}
-.formulario-zoom-btn::after,
-.formulario-zoom-btn::before{
-    content: "";
-    position: absolute;
-    width: 5px;
-    height: 30px;
-    top: 50%;
-    top: calc(50% - 15px);
-    top: -moz-calc(50% - 15px);
-    left: 50%;
-    left: calc(50% - 2.5px);
-    left: -moz-calc(50% - 2.5px);
-    background: #ffffff;
-}
-.formulario-zoom-btn:hover{
-    cursor: pointer;
-    background-color: #b51a25;
-    box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.3);
-}
-#formulario-zoom-in{
-    margin-bottom: 10px;
-}
-#formulario-zoom-out::before,
-#formulario-zoom-out::after,
-#formulario-zoom-in::before{
-    transform: rotate(90deg);
-}
-#formulario-zoom-in::after{
-    transform: rotate(0deg);
-}
-
+/****************/
 
 #formulario-checks{
     position: relative;
@@ -235,6 +208,7 @@ html,body{
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 
     transition: background-color 0.2s, border 0.2s;
 }
@@ -265,10 +239,67 @@ html,body{
 
 .formulario-checked .formulario-check-input{
     background-color: rgba(255,255,255,1);
-    border: #fff solid 1px;
+    border: #fff solid 2px;
 }
 .formulario-checked .formulario-check-input img{
     opacity: 1;
     transform: scale(1);
 }
 
+/****************/
+
+#formulario-buttons{
+    position: absolute;
+    width: 45px;
+    height: 100px;
+    left: 20px;
+    bottom: 0px;
+    bottom: calc(0px + 70px + 20px);
+}
+
+.formulario-zoom-btn{
+    outline: none;
+    outline-width: 0;
+    display: block;
+    width: 45px;
+    height: 45px;
+    box-sizing: border-box;
+    position: relative;
+    border-radius: 50%;
+    border: none;
+    background-color: #d61921;
+
+    box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+
+    transition: box-shadow 0.2s, background-color 0.2s;
+}
+.formulario-zoom-btn::after,
+.formulario-zoom-btn::before{
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 25px;
+    top: 50%;
+    top: calc(50% - 12.5px);
+    top: -moz-calc(50% - 12.5px);
+    left: 50%;
+    left: calc(50% - 2.5px);
+    left: -moz-calc(50% - 2.5px);
+    background: #ffffff;
+}
+.formulario-zoom-btn:hover{
+    cursor: pointer;
+    background-color: #b51a25;
+    box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.3);
+}
+#formulario-zoom-in{
+    margin-bottom: 10px;
+}
+#formulario-zoom-out::before,
+#formulario-zoom-out::after,
+#formulario-zoom-in::before{
+    transform: rotate(90deg);
+}
+#formulario-zoom-in::after{
+    transform: rotate(0deg);
+}
