@@ -38,7 +38,7 @@ function getE(idname){
 }
 
 function prepareFormulario(){
-    getE('formulario-img').style.width = (window.innerWidth-200)+'px'
+    //getE('formulario-img').style.width = (window.innerWidth-200)+'px'
 
     for(i = 0;i<puntos.length;i++){
         var punto = document.createElement('div')
@@ -56,6 +56,71 @@ function prepareFormulario(){
 
         punto.style.width = puntos[i].w+'%'
         var h = punto.offsetWidth
+        if(puntos[i].h!=null&&puntos[i].h!=undefined){
+            if(puntos[i].h=='1/2'){
+                h = (punto.offsetWidth/2)
+            }else if(puntos[i].h=='1/3'){
+                h = (punto.offsetWidth/3)
+            }else if(puntos[i].h=='1/10'){
+                h = (punto.offsetWidth/10)
+            }
+        }
+
+        if(puntos[i].m!=null&&puntos[i].m!=undefined){
+            var signo = document.createElement('div')
+            if(puntos[i].mp!=null&&puntos[i].mp!=undefined){
+                signo.className = 'signo signo-'+puntos[i].mp
+            }else{
+                signo.className = 'signo signo-right'
+            }
+            signo.innerHTML = '<img src="assets/images/icon-signo.svg" />'
+            signo.setAttribute('onclick','clickSigno('+i+',this)')
+            punto.appendChild(signo)
+        }
         punto.style.height = h+'px'
+        punto.style.left = puntos[i].x+'%'
+        punto.style.top = puntos[i].y+'%'
     }
+}
+
+var animating_signo = false;
+var animacion_signo = null;
+var tooltip_status = 'off'
+
+function clickSigno(s,div){
+    if(!animating_signo){
+        if(tooltip_status=='off'){
+            getE('tooltip-txt').innerHTML = puntos[s].m
+            getE('tooltip').className = 'tooltip-on'
+            setTooltipPos(s,div)
+            tooltip_status = 'on'
+        }else{
+            animating_signo = true;
+            getE('tooltip').className = 'tooltip-off'
+            animacion_signo = setTimeout(function(){
+                clearTimeout(animacion_signo)
+                animacion_signo = null
+
+                getE('tooltip-txt').innerHTML = puntos[s].m
+                getE('tooltip').className = 'tooltip-on'
+                setTooltipPos(s,div)
+                tooltip_status = 'on'
+                animating_signo = false;
+            },250)
+        }
+    }
+}
+
+function setTooltipPos(s,div){
+    over_mp3.play()
+    var posx = div.getBoundingClientRect().left
+    var posy = div.getBoundingClientRect().top
+
+    var signo_width = (div.getBoundingClientRect().width / 2)
+    getE('tooltip').style.left = (posx + signo_width)+'px'
+    getE('tooltip').style.top = (posy - 10)+'px'
+}
+
+function zoomIn(){
+    
 }

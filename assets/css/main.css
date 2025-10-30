@@ -44,7 +44,7 @@ html,body{
     position: relative;
     display: block;
     margin: 0px auto;
-    width: 80%;
+    width: 100%;
 }
 
 #formulario-opcional,
@@ -60,6 +60,7 @@ html,body{
 .formulario-punto-opcional,
 .formulario-punto-obligatorio-si,
 .formulario-punto-obligatorio-no{
+    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -81,6 +82,64 @@ html,body{
     border-radius: 2px;
 }
 
+.signo{
+    position: absolute;
+    cursor: pointer;
+    z-index: 10;
+}
+.signo-right{
+    width: auto;
+    height: 100%;
+    left: 100%;
+    left: calc(100% + 10px);
+    left: -moz-calc(100% + 10px);
+    top: 0px;
+}
+.signo-right img{
+    display: block;
+    height: 100%;
+    width: auto;
+    margin: 0px;
+}
+
+#tooltip{
+    position: absolute;
+    width: 350px;
+    height: auto;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 4px 4px 10px 4px rgba(0,0,0,0.3);
+}
+#tooltip p{
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+
+    font-family: 'HelveticaNeueMedium';
+    font-size: 15px;
+    color: #000000;
+    font-weight: normal;
+    line-height: normal;
+    text-align: center;
+}
+.tooltip-off{
+    opacity: 0;
+    transform: translateY(-100%) translateX(-50%) scale(0.5);
+    visibility: hidden;
+
+    transition: opacity 0.25s, transform 0.25s, visibility 0.25s;
+}
+.tooltip-on{
+    opacity: 1;
+    transform: translateY(-100%) translateX(-50%) scale(1);
+    visibility: visible;
+
+    transition: opacity 0.25s, transform 0.25s, visibility 0s;
+}
 
 .formulario-off{
 
