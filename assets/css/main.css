@@ -1,0 +1,215 @@
+html,body{
+    position: relative;
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/fondo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#formulario-wrapper{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    height: calc(100% - 70px);
+    height: -moz-calc(100% - 70px);
+    margin: 0px;
+    padding: 0px;
+
+    scrollbar-color: #999999 rgba(0,0,0,0);
+    scrollbar-width: thin;
+    overflow: auto;
+}
+
+#formulario-wrap{
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+
+}
+#formulario-img{
+    position: relative;
+    display: block;
+    margin: 0px auto;
+    width: 80%;
+}
+
+#formulario-opcional,
+#formulario-obligatorio-si-causal,
+#formulario-obligatorio-no-causal{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+}
+
+.formulario-punto-opcional,
+.formulario-punto-obligatorio-si,
+.formulario-punto-obligatorio-no{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.formulario-punto-opcional{
+    background-color: rgba(178,234,42, 0.6);
+    border-radius: 2px;
+}
+.formulario-punto-obligatorio-si{
+    background-color: rgba(237,28,36, 0.6);
+    border-radius: 2px;
+}
+.formulario-punto-obligatorio-no{
+    background-color: rgba(124,56,148, 0.6);
+    border-radius: 2px;
+}
+
+
+.formulario-off{
+
+}
+.formulario-on{
+
+}
+
+#formulario-buttons{
+    position: absolute;
+    width: 45px;
+    height: 100px;
+    left: 20px;
+    bottom: 0px;
+    bottom: calc(0px + 70px + 20px);
+}
+
+.formulario-zoom-btn{
+    outline: none;
+    outline-width: 0;
+    display: block;
+    width: 45px;
+    height: 45px;
+    box-sizing: border-box;
+    position: relative;
+    border-radius: 50%;
+    border: none;
+    background-color: #d61921;
+
+    box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+
+    transition: box-shadow 0.2s, background-color 0.2s;
+}
+.formulario-zoom-btn::after,
+.formulario-zoom-btn::before{
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 30px;
+    top: 50%;
+    top: calc(50% - 15px);
+    top: -moz-calc(50% - 15px);
+    left: 50%;
+    left: calc(50% - 2.5px);
+    left: -moz-calc(50% - 2.5px);
+    background: #ffffff;
+}
+.formulario-zoom-btn:hover{
+    cursor: pointer;
+    background-color: #b51a25;
+    box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.3);
+}
+#formulario-zoom-in{
+    margin-bottom: 10px;
+}
+#formulario-zoom-out::before,
+#formulario-zoom-out::after,
+#formulario-zoom-in::before{
+    transform: rotate(90deg);
+}
+#formulario-zoom-in::after{
+    transform: rotate(0deg);
+}
+
+
+#formulario-checks{
+    position: relative;
+    width: 100%;
+    height: 70px;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.65);
+    gap: 15px;
+}
+
+.formulario-check{
+    position: relative;
+    width: auto;
+    display: flex;
+    align-items: center;
+}
+.formulario-check-input{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255,255,255,0);
+    border: #fff solid 2px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: background-color 0.2s, border 0.2s;
+}
+.formulario-check-input img{
+    display: block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+    transform: scale(0.5);
+
+    transition: opacity 0.2s, transform 0.2s;
+}
+.formulario-check > p{
+    display: block;
+    width: auto;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+
+    font-family: 'HelveticaNeueRoman';
+    font-size: 16px;
+    color: #fff;
+    font-weight: normal;
+    line-height: normal;
+    text-align: left;
+}
+
+.formulario-checked .formulario-check-input{
+    background-color: rgba(255,255,255,1);
+    border: #fff solid 1px;
+}
+.formulario-checked .formulario-check-input img{
+    opacity: 1;
+    transform: scale(1);
+}
+

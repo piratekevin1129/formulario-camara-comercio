@@ -1,0 +1,21 @@
+@font-face {
+    font-family: "HelveticaNeueBold";
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+    src: url("fonts/HelveticaNeueBold.ttf") format('truetype');
+}
+@font-face {
+    font-family: "HelveticaNeueMedium";
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+    src: url("fonts/HelveticaNeueMedium.ttf") format('truetype');
+}
+@font-face {
+    font-family: "HelveticaNeueRoman";
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+    src: url("fonts/HelveticaNeueRoman.ttf") format('truetype');
+}

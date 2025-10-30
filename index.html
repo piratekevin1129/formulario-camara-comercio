@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es" translate="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+
+    <link href="assets/css/fonts.css" type="text/css" rel="stylesheet" />
+    <link href="assets/css/main.css" type="text/css" rel="stylesheet" />
+    <link href="assets/css/botones.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/loader.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div id="container">
+        <div id="formulario-wrapper">
+            <div id="formulario-wrap">
+                <img id="formulario-img" src="assets/images/formulario.png" />
+                <div id="formulario-opcional" class="formulario-on"></div>
+                <div id="formulario-obligatorio-si-causal" class="formulario-on"></div>
+                <div id="formulario-obligatorio-no-causal" class="formulario-on"></div>
+            </div>
+        </div>
+        <div id="formulario-checks">
+            <div class="formulario-check formulario-checked">
+                <div class="formulario-check-input">
+                    <img src="assets/images/icon_check-op.svg" />
+                </div>
+                <p>Opcional</p>
+            </div>
+            <div class="formulario-check">
+                <div class="formulario-check-input">
+                    <img src="assets/images/icon_check-si.svg" />
+                </div>
+                <p>Obligatorio y es causal de devolución su omisión</p>
+            </div>
+            <div class="formulario-check">
+                <div class="formulario-check-input">
+                    <img src="assets/images/icon_check-no.svg" />
+                </div>
+                <p>Obligatorio pero no es causal única de devolución</p>
+            </div>
+        </div>
+        <div id="formulario-buttons">
+            <button id="formulario-zoom-in" class="formulario-zoom-btn"></button>
+            <button id="formulario-zoom-out" class="formulario-zoom-btn"></button>
+        </div>
+        
+    </div>
+
+    <div id="botones">
+        <button id="next-tema-btn" class="next-tema-on" onclick="clickSiguiente()"></button>
+        <button id="sonido-btn" class="sonido-off"></button>
+    </div>
+
+    <div id="loader" class="loader-on">
+        <div id="loader-img"></div>
+        <div id="loader-bar">
+            <div id="loader-bar2"></div>
+        </div>
+    </div>
+    
+    <script src="assets/data.js"></script>
+    <script src="assets/js/loader.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        var background_mp3 = null;
+        var click_mp3 = null;
+        var over_mp3 = null;
+
+        var intro_mp3 = null;
+        
+        window.onload = function(){
+            loadTrack({src: 'assets/sounds/background.mp3', callBack: function(data){
+                background_mp3 = data
+                background_mp3.loop = true
+                background_mp3.volume = 0.2
+                loaderUpdate()
+                loadTrack({src: 'assets/sounds/click.mp3', callBack: function(data){
+                    click_mp3 = data
+                    loaderUpdate()
+                    loadTrack({src: 'assets/sounds/over.mp3', callBack: function(data){
+                    over_mp3 = data
+                    loaderUpdate()
+                    
+                        //loadTrack({src: 'assets/audios/intro.mp3', callBack: function(data){
+                            //intro_mp3 = data
+
+                            //window.top.postMessage({'completado': false, 'alto': 507}, '*' );
+
+                            prepareFormulario()
+                            unsetLoader()
+                            getE('sonido-btn').setAttribute('onclick','clickSonido()')
+                            //intro_mp3.play()
+                        //}})
+                    }})
+                }})
+            }})
+        }
+
+        var toggle_sonido = false
+        function clickSonido(){
+            if(!toggle_sonido){
+                toggle_sonido = true
+                getE('sonido-btn').className = 'sonido-on'
+                background_mp3.play()
+            }else{
+                toggle_sonido = false
+                getE('sonido-btn').className = 'sonido-off'
+                background_mp3.pause()
+            }
+        }
+
+        function clickSiguiente(){
+            parent.nextTema()
+        }
+    </script>
+</body>
+</html>

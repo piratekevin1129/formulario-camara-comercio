@@ -1,0 +1,100 @@
+var puntos = [{
+    t:'opcional',
+    x:0,
+    y:0,
+    w:2
+},{
+    t:'obligatorio-no',
+    x:0,
+    y:0,
+    w:2
+},{
+    t:'obligatorio-si',
+    x:0,
+    y:0,
+    w:2,
+    m:'Deberá diligenciarse tal cual aparece en los estatutos'
+},{
+    t:'obligatorio-si',
+    x:0,
+    y:0,
+    w:2,
+    m:'Como aparece en estatutos'
+},{
+    t:'obligatorio-si',
+    x:0,
+    y:0,
+    w:2,
+    m:'Deberá diligenciarse tal cual aparece en el documento de identidad'
+},{
+    t:'obligatorio-si',
+    x:0,
+    y:0,
+    w:2
+},{
+    t:'obligatorio-si',
+    x:0,
+    y:0,
+    w:2
+},{
+    t:'obligatorio-si',
+    x:0,
+    y:0,
+    w:2
+},{
+    t:'obligatorio-si',
+    x:0,
+    y:0,
+    w:2
+},{
+    t:'obligatorio-no',
+    x:0,
+    y:0,
+    w:2
+},{
+    t:'obligatorio-no',
+    x:0,
+    y:0,
+    w:2,
+    m:'Se diligencia de tener NIT asignado al matricularse'
+},{
+    t:'obligatorio-si',
+    x:0,
+    y:0,
+    w:2
+},{
+    t:'opcional',
+    x:0,
+    y:0,
+    w:2
+},{
+    t:'obligatorio-si',
+    x:0,
+    y:0,
+    w:2
+},{
+    t:'obligatorio-si',
+    x:0,
+    y:0,
+    w:2
+},{
+    t:'obligatorio-si',
+    x:0,
+    y:0,
+    w:2
+},{
+    t:'opcional',
+    x:0,
+    y:0,
+    w:2
+},{
+    t:'opcional',
+    x:0,
+    y:0,
+    w:2
+},{
+    t:'opcional',
+    x:0,
+    y:0,
+    w:2
+}]
