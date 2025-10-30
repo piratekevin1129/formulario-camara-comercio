@@ -161,6 +161,41 @@ html,body{
     line-height: normal;
     text-align: center;
 }
+#tooltip-cerrar{
+    outline: none;
+    outline-width: 0;
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: #58595b;
+    border: none;
+    top: -11px;
+    right: -11px;
+    cursor: pointer;
+}
+#tooltip-cerrar::after,
+#tooltip-cerrar::before{
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 12px;
+    background-color: #fff;
+    border-radius: 2px;
+    top: 50%;
+    top: calc(50% - 6px);
+    top: -moz-calc(50% - 6px);
+    left: 50%;
+    left: calc(50% - 1px);
+    left: -moz-calc(50% - 1px);
+}
+#tooltip-cerrar::after{
+    transform: rotate(-45deg);
+}
+#tooltip-cerrar::before{
+    transform: rotate(45deg);
+}
+
 .tooltip-off{
     opacity: 0;
     transform: translateY(-100%) translateX(-50%) scale(0.5);

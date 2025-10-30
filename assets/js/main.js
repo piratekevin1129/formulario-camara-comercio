@@ -188,6 +188,11 @@ function clickSigno(s,div){
     }
 }
 
+function cerrarTooltip(){
+    getE('tooltip').className = 'tooltip-off'
+    tooltip_status = 'off'
+}
+
 function setTooltipPos(s,div){
     over_mp3.play()
     var posx = div.getBoundingClientRect().left
@@ -218,8 +223,7 @@ function zoomIn(){
                 animation_zoom = null;
 
                 resizePuntos()
-                getE('tooltip').className = 'tooltip-off'
-                tooltip_status = 'off'
+                cerrarTooltip()
                 animating_zoom = false;
             },150)
         }
@@ -240,8 +244,7 @@ function zoomOut(){
                 animation_zoom = null;
 
                 resizePuntos()
-                getE('tooltip').className = 'tooltip-off'
-                tooltip_status = 'off'
+                cerrarTooltip()
                 animating_zoom = false;
             },150)
         }
@@ -281,6 +284,5 @@ function clickCheck(div,ind){
         opcion3_mp3.play()
     }
 
-    getE('tooltip').className = 'tooltip-off'
-    tooltip_status = 'off'
+    cerrarTooltip()
 }
