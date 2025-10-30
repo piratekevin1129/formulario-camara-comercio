@@ -69,6 +69,9 @@
         var background_mp3 = null;
         var click_mp3 = null;
         var over_mp3 = null;
+        var opcion1_mp3 = null;
+        var opcion2_mp3 = null;
+        var opcion3_mp3 = null;
 
         var intro_mp3 = null;
         
@@ -84,6 +87,18 @@
                     loadTrack({src: 'assets/sounds/over.mp3', callBack: function(data){
                     over_mp3 = data
                     loaderUpdate()
+
+                        loadTrack({src: 'assets/audios/opcional.mp3', callBack: function(data){
+                        opcion1_mp3 = data
+                        loaderUpdate()
+
+                        loadTrack({src: 'assets/audios/obligatorio-si.mp3', callBack: function(data){
+                        opcion2_mp3 = data
+                        loaderUpdate()
+
+                        loadTrack({src: 'assets/audios/obligatorio-no.mp3', callBack: function(data){
+                        opcion3_mp3 = data
+                        loaderUpdate()
                     
                         //loadTrack({src: 'assets/audios/intro.mp3', callBack: function(data){
                             //intro_mp3 = data
@@ -95,6 +110,10 @@
                             getE('sonido-btn').setAttribute('onclick','clickSonido()')
                             //intro_mp3.play()
                         //}})
+
+                        }})
+                        }})
+                        }})
                     }})
                 }})
             }})

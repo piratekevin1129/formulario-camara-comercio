@@ -258,22 +258,29 @@ function clickCheck(div,ind){
     }
     checks[ind-1].className = 'formulario-check formulario-checked'
 
+    click_mp3.currentTime = 0
+    click_mp3.play()
+
     if(ind==1){
         getE('formulario-opcional').className = 'formulario-on'
         getE('formulario-obligatorio-si-causal').className = 'formulario-off'
         getE('formulario-obligatorio-no-causal').className = 'formulario-off'
+        opcion1_mp3.currentTime = 0
+        opcion1_mp3.play()
     }else if(ind==2){
         getE('formulario-opcional').className = 'formulario-off'
         getE('formulario-obligatorio-si-causal').className = 'formulario-on'
         getE('formulario-obligatorio-no-causal').className = 'formulario-off'
+        opcion2_mp3.currentTime = 0
+        opcion2_mp3.play()
     }else if(ind==3){
         getE('formulario-opcional').className = 'formulario-off'
         getE('formulario-obligatorio-si-causal').className = 'formulario-off'
         getE('formulario-obligatorio-no-causal').className = 'formulario-on'
+        opcion3_mp3.currentTime = 0
+        opcion3_mp3.play()
     }
 
     getE('tooltip').className = 'tooltip-off'
     tooltip_status = 'off'
-    click_mp3.currentTime = 0
-    click_mp3.play()
 }

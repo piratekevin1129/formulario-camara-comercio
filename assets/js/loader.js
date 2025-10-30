@@ -1,4 +1,4 @@
-var total_loader = (5)/*audios iniciales*/
+var total_loader = (6)/*audios iniciales*/
 var current_loader = 0
 function loaderUpdate(){
     current_loader++
